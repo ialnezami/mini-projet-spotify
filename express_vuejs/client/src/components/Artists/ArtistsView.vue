@@ -29,7 +29,7 @@
 </template>
 <script>
 import { mapGetters, mapActions } from "vuex";
-import ArtistView from "@/components/ArtistView.vue";
+import ArtistView from "@/components/Artists/ArtistView.vue";
 export default {
   name: "artistsView",
   components: {

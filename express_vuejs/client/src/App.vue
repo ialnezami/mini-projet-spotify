@@ -1,7 +1,8 @@
 <template>
   <div class="bg-dark h-screen">
     <div class="flex" style="height: 100vh">
-      <nav class="w-56 bg-black h-full flex-none">
+      <div class="w-56 bg-black h-full flex-none"></div>
+      <nav class="w-56 bg-black h-full flex-none fixed">
         <router-link
           to="/"
           class="w-full rounded px-3 flex items-center justify-start"

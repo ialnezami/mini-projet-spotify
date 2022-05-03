@@ -1,9 +1,7 @@
 import api from "@/services/ArtistsService";
-
 export default {
   state: {
     artists: [],
-    artist: {},
     artistAlbums: [],
     artistTopTracks: [],
     artistRelatedArtists: [],
@@ -13,9 +11,6 @@ export default {
   getters: {
     getArtists(state) {
       return state.artists;
-    },
-    getArtist(state) {
-      return state.artist;
     },
     getArtistAlbums(state) {
       return state.artistAlbums;
@@ -36,9 +31,6 @@ export default {
   mutations: {
     setArtists(state, artists) {
       state.artists = artists;
-    },
-    setArtist(state, artist) {
-      state.artist = artist;
     },
     setArtistAlbums(state, artistAlbums) {
       state.artistAlbums = artistAlbums;

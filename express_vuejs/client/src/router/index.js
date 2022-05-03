@@ -1,5 +1,6 @@
 import { createRouter, createWebHistory } from "vue-router";
 import HomeView from "../views/HomeView.vue";
+import ArtistDetailView from "@/views/ArtistDetailView.vue";
 
 const routes = [
   {
@@ -12,6 +13,12 @@ const routes = [
     name: "search",
     component: () =>
       import(/* webpackChunkName: "about" */ "../views/SearchView.vue"),
+  },
+  {
+    path: "/artist/:id",
+    name: "artistDetail",
+    component: ArtistDetailView,
+    props: true,
   },
 ];
 
