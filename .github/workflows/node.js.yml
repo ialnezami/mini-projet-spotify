@@ -11,8 +11,6 @@ on:
 
 jobs:
   build:
-    env:
-      working_directory: ./server
 
     runs-on: ubuntu-latest
 
@@ -24,6 +22,8 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Use Node.js ${{ matrix.node-version }}
+    # change directory to the project server root
+    - run: cd ${{ github.workflow.event.payload.repository.name }}
       uses: actions/setup-node@v3
       with:
         node-version: ${{ matrix.node-version }}
