@@ -1,10 +1,22 @@
 <template>
-  <div>
-    <nav>
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </nav>
-    <router-view />
+  <div class="bg-dark h-screen">
+    <div class="flex" style="height: 100vh">
+      <nav class="w-56 bg-black h-full flex-none">
+        <router-link
+          to="/"
+          class="w-full rounded px-3 flex items-center justify-start"
+          >Home</router-link
+        >
+        <router-link
+          to="/search"
+          class="w-full rounded px-3 flex items-center justify-start"
+          >Search</router-link
+        >
+      </nav>
+      <div class="w-full h-full relative">
+        <router-view class="w-fill sticky top-o p-2" />
+      </div>
+    </div>
   </div>
 </template>
 

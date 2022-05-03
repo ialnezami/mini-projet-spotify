@@ -59,9 +59,13 @@ export default {
   actions: {
     async getArtistsSearch({ commit }, search) {
       try {
-        const response = await api.getartistsSearch(search);
-        commit("setArtists", response.data.artists.items);
-        commit("setLastSearch", search);
+        if (search.length > 0) {
+          const response = await api.getArtistsSearch(search);
+          commit("setArtists", response.data.artists.items);
+          commit("setLastSearch", search);
+        } else {
+          commit("setArtists", []);
+        }
       } catch (err) {
         console.error(
           "[ERROR][API FAILED] fail to get artistes search / " + err
