@@ -1,9 +1,8 @@
 import { createStore } from "vuex";
+import artisteStore from "@/store/ArtistsStore";
 
 export default createStore({
-  state: {},
-  getters: {},
-  mutations: {},
-  actions: {},
-  modules: {},
+  modules: {
+    artisteStore,
+  },
 });
