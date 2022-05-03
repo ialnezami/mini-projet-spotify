@@ -9,10 +9,11 @@ var cors = require('cors');
 
 
 var indexRouter = require('./routes/index');
+var authorizationRouter = require('./routes/authorization');
 
 var app = express();
 const corsOptions = {
-  origin: "http://localhost:8080",
+  origin: process.env.VUE_APP_CLIENT_URL,
   methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
 };
 app.use(cors(corsOptions));
@@ -26,6 +27,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+app.use('/authorization', authorizationRouter);
 app.use('/', indexRouter);
 
 // catch 404 and forward to error handler
