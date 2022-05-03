@@ -17,6 +17,12 @@ var authOptions = {
 router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
 });
+// authorization code
+/***
+ * we call spotify api to get the access token
+ * and then we send the access token to the client
+ * 
+ */
 router.post('/', function(req, res, next) {
   request.post(authOptions, function(error, response, body) {
           res.status(200).json({body: body});
