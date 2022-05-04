@@ -21,6 +21,8 @@
             </h1>
           </div>
           <div>
+            <h2 class="font-bold text-xl mb-2 text-white">Tracks</h2>
+            <hr class="pb-5" />
             <div class="px-6 pt-4 pb-2 flex flex-row flex-wrap">
               <TrackView v-for="track in tracks" :key="track.id" :track="track">
               </TrackView>

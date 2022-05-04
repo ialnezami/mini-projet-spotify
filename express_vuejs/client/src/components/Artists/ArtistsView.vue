@@ -1,6 +1,6 @@
 <template>
-  <div class="home">
-    <div class="mb-3 xl:w-96">
+  <div class="home relative">
+    <div class="mb-3 xl:w-96 sticky top-0 bg-white z-10">
       <div
         class="input-group relative flex flex-wrap items-stretch w-full mb-4"
       >
@@ -8,7 +8,7 @@
           v-model="search"
           @keyup="searchArtist"
           type="search"
-          class="form-control relative flex-auto min-w-0 block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
+          class="form-control sticky top-0 flex-auto w-1/2 px-4 py-3 bg-transparent border-none text-xl text-gray-700 placeholder-gray-600 focus:outline-none focus:shadow-outline"
           placeholder="Search"
           aria-label="Search"
           aria-describedby="button-addon2"

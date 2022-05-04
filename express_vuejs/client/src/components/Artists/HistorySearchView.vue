@@ -1,7 +1,7 @@
 <template>
   <div class="about">
     <h2 class="bg-white text-left m-5 p-5 text-green-600 text-xl">
-      Recent searches
+      <span class="material-icons mr-2">history</span>Recent consulted artists
     </h2>
     <div class="">
       <div
