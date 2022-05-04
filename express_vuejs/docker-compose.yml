@@ -7,23 +7,23 @@ services:
       - app-dev
     container_name: api-app
     volumes:
-      - ./api:/usr/src/app
+      - ./server:/usr/src/app
     ports:
-      - 8182:8888
+      - 8888:8888
 
   ui-app:
-    build: ./UI
+    build: ./client
     networks:
       - app-dev
     container_name: ui-app
     volumes:
-      - ./ui:/usr/src/app
+      - ./client:/usr/src/app
     ports:
       - 8080:8080
     depends_on:
       - api-app
 
 networks:
-  app:
+  app-dev:
   service-webproxy:
     external: true
