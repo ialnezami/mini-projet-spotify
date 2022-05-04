@@ -15,7 +15,9 @@
         >
       </nav>
       <div class="w-full h-full relative">
-        <router-view class="w-fill sticky top-o p-2" />
+        <router-view
+          class="w-fill sticky top-o p-2 bg-gradient-to-r from-violet-500 to-fuchsia-500 h-full"
+        />
       </div>
     </div>
   </div>
