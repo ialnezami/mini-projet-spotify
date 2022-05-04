@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from "vue-router";
 import HomeView from "../views/HomeView.vue";
-import ArtistDetailView from "@/views/ArtistDetailView.vue";
+import ArtistDetailView from "@/components/Artists/ArtistDetailView.vue";
+import AlbumDetailView from "@/components/Albums/AlbumDetailView.vue";
 
 const routes = [
   {
@@ -18,6 +19,12 @@ const routes = [
     path: "/artist/:id",
     name: "artistDetail",
     component: ArtistDetailView,
+    props: true,
+  },
+  {
+    path: "/:idArtist/album/:id",
+    name: "albumDetail",
+    component: AlbumDetailView,
     props: true,
   },
 ];
