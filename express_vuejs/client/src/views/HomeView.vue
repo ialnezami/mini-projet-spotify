@@ -1,13 +1,16 @@
 <template>
   <div class="home">
-    <h1>This is a home page</h1>
+    <HistoryView />
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-
+import HistoryView from "@/components/Artists/HistorySearchView.vue";
 export default {
   name: "HomeView",
+  components: {
+    HistoryView,
+  },
 };
 </script>

@@ -5,7 +5,7 @@
 </template>
 <script>
 // @ is an alias to /src
-import ArtistesView from "@/components/ArtistsView.vue";
+import ArtistesView from "@/components/Artists/ArtistsView.vue";
 
 export default {
   name: "searchView",
