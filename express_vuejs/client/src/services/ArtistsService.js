@@ -40,8 +40,10 @@ export default {
       console.info(
         "[INFO][API SUCCESS] album tracks, response status: " + response.status
       );
-
-      return response;
+      // concat all id of track and put a separator ,
+      const ids = response.data.items.map((item) => item.id).join(",");
+      const res = await service.get("/tracks?ids=" + ids);
+      return res;
     } catch (err) {
       console.error("[ERROR][API FAILED] fail to get album tracks / " + err);
     }

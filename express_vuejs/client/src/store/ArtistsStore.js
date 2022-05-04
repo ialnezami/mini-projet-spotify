@@ -121,8 +121,12 @@ export default {
     },
     async getAlbumsTracks({ commit }, id) {
       try {
+        // sort by popularity
         const response = await api.getAlbumsTracks(id);
-        commit("setAlbumTracks", response.data.items);
+        const trackSorted = response.data.tracks.sort((a, b) =>
+          a.popularity < b.popularity ? 1 : -1
+        );
+        commit("setAlbumTracks", trackSorted);
       } catch (err) {
         console.error("[ERROR][API FAILED] fail to get album tracks / " + err);
       }
