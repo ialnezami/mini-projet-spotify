@@ -30,6 +30,12 @@ Getting up and running is as easy as 1, 2, 3 or just 0
 3. Start your app
 
     ```
+    cd path/to/server
+    npm start
+    ```
+    
+    ```
+    cd path/to/client
     npm start
     ```
 
