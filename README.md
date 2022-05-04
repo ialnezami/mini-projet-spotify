@@ -3,7 +3,7 @@
 
 ## About
 
-This project uses expressJS and vueJS and API sportify
+This project uses expressJS and vueJS and API spotify
 
 ## Getting Started
 
