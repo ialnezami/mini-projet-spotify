@@ -22,13 +22,8 @@
           </div>
           <div>
             <div class="px-6 pt-4 pb-2 flex flex-row flex-wrap">
-              <div
-                v-for="track in tracks"
-                :key="track.id"
-                class="inline-block bg-green-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2"
-              >
-                {{ track.name }}
-              </div>
+              <TrackView v-for="track in tracks" :key="track.id" :track="track">
+              </TrackView>
             </div>
           </div>
         </div>
@@ -38,9 +33,13 @@
 </template>
 
 <script>
+import TrackView from "@/components/Tracks/TrackView.vue";
 import { mapGetters, mapActions } from "vuex";
 export default {
   name: "AlbumDetailView",
+  components: {
+    TrackView,
+  },
   computed: {
     ...mapGetters({
       getAlbums: "getArtistAlbums",
@@ -55,17 +54,12 @@ export default {
     },
   },
   mounted() {
-    this.getAlbumsAction();
     this.getAlbumTracksAction(this.$route.params.id);
   },
   methods: {
     ...mapActions({
-      getAlbumsStore: "getArtistAlbums",
       getAlbumTracksAction: "getAlbumsTracks",
     }),
-    getAlbumsAction() {
-      this.getAlbumsStore(this.$route.params.id);
-    },
   },
 };
 </script>
