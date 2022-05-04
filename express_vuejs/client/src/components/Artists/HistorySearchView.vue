@@ -4,7 +4,9 @@
       Recent searches
     </h2>
     <div class="">
-      <div class="flex flex-row flex-wrap">
+      <div
+        class="px-6 pt-4 pb-2 flex flex-row flex-wrap justify-center items-center"
+      >
         <ArtistView
           v-for="artist in artists"
           :key="artist.id"

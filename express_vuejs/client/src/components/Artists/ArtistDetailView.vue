@@ -33,8 +33,11 @@
             >{{ genre }}
           </span>
         </div>
+        <hr />
         <div>
-          <div class="px-6 pt-4 pb-2 flex flex-row flex-wrap">
+          <div
+            class="px-6 pt-4 pb-2 flex flex-row flex-wrap justify-between items-center"
+          >
             <AlbumView
               v-for="album in albums"
               :key="album.id"
