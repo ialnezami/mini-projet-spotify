@@ -36,6 +36,6 @@ Getting up and running is as easy as 1, 2, 3 or just 0
     
     ```
     cd path/to/client
-    npm start
+    npm run serve
     ```
 
