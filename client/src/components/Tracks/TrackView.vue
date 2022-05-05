@@ -1,6 +1,6 @@
 <template>
   <div
-    class="w-60 h-full mb-3 bg-black border-violet-500 overflow-hidden shadow-lg m-2"
+    class="w-60 h-70 mb-3 bg-black border-violet-500 overflow-hidden shadow-lg m-2 hover:shadow-xl hover:bg-slate-700"
   >
     <div
       class="font-bold rounded-full bg-white text-black text-xl w-8 h-8 text-center"
@@ -19,14 +19,12 @@
         "
         alt="Sunset in the mountains"
         style="height: 175px; width: 100%"
-        class="rounded-10 drop-shadow-2xl h-1/2"
+        class="rounded-10 drop-shadow-2xl h-1/3"
       />
     </div>
-    <div class="px-6 py-4 text-violet-500 bg-white h-1/2">
-      <div class="font-bold text-xl mb-2 h-3/4">{{ track.name }}</div>
-      <hr />
-      <span
-        class="inline-block px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2 h-1/4"
+    <div class="px-6 py-4 text-green-400 h-full">
+      <div class="font-bold text-xl">{{ track.name }}</div>
+      <span class="inline-block px-3 py-1 text-sm font-semibold text-green-700"
         >{{ track.artists[0].name }} - {{ track.album.name }}
       </span>
     </div>

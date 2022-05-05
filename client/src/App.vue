@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-gradient-to-r from-violet-500 to-fuchsia-500">
+  <div class="bg-gradient-to-r from-gray-800 to-gray-900">
     <div class="flex">
       <div class="w-56 bg-black h-full flex-none"></div>
       <nav

@@ -85,17 +85,23 @@ export default {
         );
       }
     },
-    addArtistConsulted({ commit }, id) {
+    async addArtistConsulted({ commit }, id) {
       //save last 5 artists consulted in history
       // get history
       let history = this.getters.getHistory;
       const listArtists = this.getters.getArtists;
-      const artist = listArtists.find((artist) => artist.id === id);
+      var artist = listArtists.find((artist) => artist.id === id);
+      // if artist is not in listartists
+      if (!artist) {
+        // get artist
+        const response = await api.getArtist(id);
+        // add artist to listArtists
+        listArtists.push(response.data);
+        artist = response.data;
+      }
       commit("setArtist", artist);
       // check if artist is in history
       const index = history.findIndex((item) => item.id === id);
-      console.log(index);
-      console.log(" 1 history" + history);
       if (index === -1) {
         // add artist to history
         history = [artist, ...history];
@@ -104,17 +110,14 @@ export default {
           // delete last item
           history.pop();
         }
-        console.log("2 history", history);
         // save history
         commit("setHistory", history);
       }
-      console.log("3 history", history);
     },
     async getArtistAlbums({ commit }, id) {
       try {
         const response = await api.getArtistAlbums(id);
         commit("setArtistAlbums", response.data.items);
-        commit("setArtist", { id: id });
       } catch (err) {
         console.error("[ERROR][API FAILED] fail to get artist albums / " + err);
       }
