@@ -15,8 +15,8 @@ if [ ! -f "./client/node_modules/package.json" ]; then
 fi
 # start server
 # run the expressjs node server
-cd server
-npm start
+cd ../server
+node app.js &
 
 # start client
 # run the vuejs app client
