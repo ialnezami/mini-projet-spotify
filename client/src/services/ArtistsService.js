@@ -48,4 +48,18 @@ export default {
       console.error("[ERROR][API FAILED] fail to get album tracks / " + err);
     }
   },
+  async getArtist(artistId) {
+    console.debug("[INFO][API CALL] get artist");
+    try {
+      const response = await service.get("/artists/" + artistId);
+
+      console.info(
+        "[INFO][API SUCCESS] artist, response status: " + response.status
+      );
+
+      return response;
+    } catch (err) {
+      console.error("[ERROR][API FAILED] fail to get artist / " + err);
+    }
+  },
 };

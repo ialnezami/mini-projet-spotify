@@ -7,7 +7,7 @@
     }"
   >
     <div
-      class="w-60 h-60 mb-3 bg-white border-violet-500 overflow-hidden shadow-lg m-2"
+      class="w-60 h-60 mb-3 bg-black overflow-hidden shadow-lg m-2 duration-200 hover:shadow-xl hover:bg-slate-700"
     >
       <div class="flex row justify-center p-2">
         <img
@@ -21,10 +21,10 @@
           class="rounded-10 drop-shadow-2xl h-1/2"
         />
       </div>
-      <div class="px-6 py-4 bg-white">
+      <div class="px-6 py-4 text-green-400">
         <div class="font-bold text-xl mb-2">{{ artist.name }}</div>
         <p
-          class="inline-block bg-green-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2"
+          class="inline-block bg-green-700 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2"
         >
           <span class="material-icons">groups</span
           ><span class="m-2">{{ artist.followers.total }} Followers</span>

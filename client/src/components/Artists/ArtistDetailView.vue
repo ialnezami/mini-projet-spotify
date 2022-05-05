@@ -1,5 +1,5 @@
 <template>
-  <div class="about">
+  <div class="artistdetails">
     <div class="rounded shadow-lg w-full relative">
       <div
         class="flex flex-row flex-wrap justify-center bg-white sticky top-0 shadow-lg shadow-black m-10 p-5 z-10"
@@ -46,14 +46,13 @@
       </div>
       <div class="absolut shadow top-10 w-full">
         <div>
-          <div
-            class="px-6 pt-4 pb-2 flex flex-row flex-wrap justify-center items-center"
-          >
+          <div class="px-6 pt-4 pb-2 flex flex-row flex-wrap justify-center">
             <AlbumView
               v-for="album in albums"
               :key="album.id"
               :album="album"
               :id="artist.id"
+              class="w-70 h-full"
             >
             </AlbumView>
           </div>
@@ -73,13 +72,12 @@ export default {
   },
   computed: {
     ...mapGetters({
+      getArtist: "getArtist",
       getArtists: "getArtists",
       getArtistAlbums: "getArtistAlbums",
     }),
     artist() {
-      return this.getArtists.find(
-        (artist) => artist.id === this.$route.params.id
-      );
+      return this.getArtist;
     },
     albums() {
       return this.getArtistAlbums;
