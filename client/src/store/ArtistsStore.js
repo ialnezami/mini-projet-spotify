@@ -91,7 +91,14 @@ export default {
       let history = this.getters.getHistory;
       const listArtists = this.getters.getArtists;
       var artist = listArtists.find((artist) => artist.id === id);
-
+      // if artist is not in listartists
+      if (!artist) {
+        // get artist
+        const response = await api.getArtist(id);
+        // add artist to listArtists
+        listArtists.push(response.data);
+        artist = response.data;
+      }
       commit("setArtist", artist);
       // check if artist is in history
       const index = history.findIndex((item) => item.id === id);
