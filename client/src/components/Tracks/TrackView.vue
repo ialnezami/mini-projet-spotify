@@ -1,10 +1,9 @@
 <template>
-  <div
-    class="w-60 h-70 mb-3 bg-black border-violet-500 overflow-hidden shadow-lg m-2 hover:shadow-xl hover:bg-slate-700"
+<div
+    class="w-60 h-70 mb-3 bg-black border-violet-500 shadow-lg m-2 relative hover:shadow-xl hover:bg-slate-700"
   >
     <div
-      class="font-bold rounded-full bg-white text-black text-xl w-8 h-8 text-center"
-      style="position: relative; top: 0em; left: 0em"
+      class="font-bold rounded-full bg-white text-black text-xl w-8 h-8 text-center absolute -top-2 -left-2 z-20"
       title="Popularity"
     >
       {{ track.popularity }}
