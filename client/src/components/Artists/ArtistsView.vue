@@ -65,7 +65,7 @@ export default {
     }),
     searchArtist() {
       this.searchArtists(this.search);
-      // this.artists = this.getartists;
+      this.artists = this.getartists;
     },
   },
 };
